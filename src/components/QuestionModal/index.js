@@ -46,7 +46,7 @@ const QuestionModal = ({ show, handleClose, }) => {
                         </Form.Select>
                     </Form.Group>
                     {(selectType === 'Multichoice' || selectType === 'Single Select') && 
-                        <FloatingLabel controlId="floatingTextarea1" label="Enter choice option in separate line">
+                        <FloatingLabel controlId="floatingTextarea1" label="Enter choice option in separate line (*Press Enter For new Line)">
                             <Form.Control as="textarea" style={{ height: '120px' }} onChange={(e) => setChoices((e.target.value).split(/\n/))}/> 
                         </FloatingLabel>
                     }
