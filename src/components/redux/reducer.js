@@ -32,6 +32,15 @@ import * as actionTypes from './actionTypes';
             questions:[...state.formData.questions, payload]
           } 
         }
+      case actionTypes.CLEAR_STATE:
+        return {
+          formData: {
+            title: '',
+            slug: '',
+            createdAt: '',
+            questions: [],
+          }
+        }
         break;
     }
     return state;

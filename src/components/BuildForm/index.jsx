@@ -17,6 +17,9 @@ const BuildForm = (props) => {
     const [error, setError] =  useState(false);
 
 
+    useEffect(() => {
+        dispatch({type: actionTypes.CLEAR_STATE, payload: '' });
+    }, [])
     const handleToggle = () => {
         setShowModal(false);
     }
