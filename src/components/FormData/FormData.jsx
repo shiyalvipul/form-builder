@@ -48,7 +48,7 @@ const FormData = (props) => {
                                 <td className="d-flex" style={{gap: '30px'}}> 
                                     {quetion[0].choices.map(choice => (
                                             <Form.Group controlId="formBasicRadio">
-                                                <Form.Check inline type="radio" label={choice} id={`radio-${choice}`} />
+                                                <Form.Check inline type="radio" name="flexRadioDefault" label={choice} id={`radio-${choice}`} />
                                             </Form.Group>
                                     ))}
                                 </td>

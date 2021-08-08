@@ -13,9 +13,7 @@ const FormLists = () => {
     },  []);
 
     const handleFormURL = (slug) => {
-        console.log('slug', slug);
         history.push(`/form/${slug}`)
-        
     }
 
     return (

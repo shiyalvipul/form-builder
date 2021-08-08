@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 import { Modal, Button, Form, FloatingLabel } from 'react-bootstrap';
-import { Field, reduxForm, FieldArray } from 'redux-form';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import * as actionTypes from '../redux/actionTypes';
 
 const QuestionModal = ({ show, handleClose, }) => {
     const dispatch = useDispatch();
-    const[selectType, setSelectType] = useState('Text');
+    const [selectType, setSelectType] = useState('Text');
     const [question, setQuestion] = useState('');
     const [choices, setChoices] = useState('');
     const [error, setError] =  useState(false);
@@ -26,7 +25,6 @@ const QuestionModal = ({ show, handleClose, }) => {
         } else {
             setError(true)
         }
-     
     }
     return (
         <Modal show={show} onHide={handleClose}  size="lg">
@@ -47,10 +45,11 @@ const QuestionModal = ({ show, handleClose, }) => {
                             <option>Single Select</option>
                         </Form.Select>
                     </Form.Group>
-                    {(selectType === 'Multichoice' || selectType === 'Single Select') && <FloatingLabel controlId="floatingTextarea1" label="Enter Choice Option in Sepateline">
+                    {(selectType === 'Multichoice' || selectType === 'Single Select') && 
+                        <FloatingLabel controlId="floatingTextarea1" label="Enter choice option in separate line">
                             <Form.Control as="textarea" style={{ height: '120px' }} onChange={(e) => setChoices((e.target.value).split(/\n/))}/> 
                         </FloatingLabel>
-                        }
+                    }
                 </Form>
             </Modal.Body>
             <Modal.Footer>
